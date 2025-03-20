@@ -1,0 +1,168 @@
+:root {
+	--soft-blue: hsl(215, 51%, 70%);
+	--cyan: hsl(178, 100%, 50%);
+	--main-bg: hsl(217, 54%, 11%);
+	--card-bg: hsl(216, 50%, 16%);
+	--blue-line: hsl(215, 32%, 27%);
+	--white: hsl(0, 0%, 100%);
+	--primary-font: "Outfit", sans-serif;
+}
+
+/* Style Reset */
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+img {
+	display: block;
+	height: auto;
+	max-width: 100%;
+}
+
+body {
+	font-size: 18px;
+	background: var(--main-bg);
+	font-family: var(--primary-font);
+}
+
+.container {
+	margin: 0 auto;
+	padding: 4rem 1.6rem;
+	max-width: 375px;
+}
+
+.nft {
+	padding: 1.6rem;
+	border-radius: 10px;
+	background: var(--card-bg);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	.img-container {
+		border-radius: 10px;
+		position: relative;
+
+		&:hover .img-overlay {
+			opacity: 0.5;
+			cursor: pointer;
+		}
+
+		.img-overlay {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: var(--cyan);
+			opacity: 0;
+			transition: all 0.3s ease-in-out;
+			border-radius: 10px;
+		}
+
+		img {
+			border-radius: 10px;
+		}
+	}
+}
+
+.description-container {
+	padding: 1.4rem 0 0 0;
+	color: var(--white);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+	width: 100%;
+
+	h1 {
+		font-size: 1.2rem;
+		font-weight: 600;
+
+		&:hover {
+			color: var(--cyan);
+			cursor: pointer;
+		}
+	}
+
+	p {
+		font-weight: 200;
+		padding: 1rem 0;
+		font-size: 1rem;
+		color: var(--soft-blue);
+	}
+}
+
+.details-container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	border-bottom: 1px var(--blue-line) solid;
+	padding-bottom: 1rem;
+
+	h2 {
+		font-size: 1rem;
+		font-weight: 400;
+		color: var(--cyan);
+	}
+
+	.time-left {
+		display: flex;
+		gap: 0.4rem;
+		justify-content: center;
+		align-items: center;
+
+		img {
+			height: 1rem;
+		}
+
+		h3 {
+			font-weight: 400;
+			font-size: 1rem;
+			color: var(--soft-blue);
+		}
+	}
+}
+
+.personal-info {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	width: 100%;
+
+	img {
+		height: 2rem;
+		border-radius: 100%;
+		border: 1px var(--white) solid;
+	}
+
+	p {
+		padding: 0 0 0 1rem;
+
+		span {
+			color: var(--white);
+
+			&:hover {
+				color: var(--cyan);
+				cursor: pointer;
+			}
+		}
+	}
+}
+
+@media screen and (min-width: 400px) {
+	.container {
+		margin: 7rem auto;
+	}
+
+	.nft {
+		box-shadow: 7px 2px 30px 18px rgba(0, 0, 0, 0.05);
+	}
+}
